@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .leaf {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background-image: url('leaf.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      opacity: 0.7;
+      z-index: 999;
+      animation: fall 6s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const leaf = document.createElement('div');
+      leaf.className = 'leaf';
+      leaf.style.left = '50vw';
+      document.body.appendChild(leaf);
+    });
+  </script>
+</head>
+<body>
+  <h1>測試葉子飄下來 🍃</h1>
+</body>
+</html>
